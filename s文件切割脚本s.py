@@ -45,9 +45,14 @@ def movefiles(filename):
         os.rename(path, path+cc)   #然后拼接起来，作为切割后的新文件的文件名
 		
 		
-		
-		
-		
+
+movefiles(path)
+
+
+
+
+
+
 #下面是更新的，追加了判断文件是否存在		
 
 path = "/home/www/dazuizhibo1/sys/fun/logs/201707/sql.txt"
@@ -72,6 +77,3 @@ def movefiles(filename):
 		
 movefiles(path)
 movefiles(path2)
-
-
-movefiles(path)
