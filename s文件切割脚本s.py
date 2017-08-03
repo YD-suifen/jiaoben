@@ -43,6 +43,35 @@ def movefiles(filename):
         bb = time.time()    #这里是生成一个当前的时间戳
         cc = str(bb)        #将这个时间戳的类型转换一下
         os.rename(path, path+cc)   #然后拼接起来，作为切割后的新文件的文件名
+		
+		
+		
+		
+		
+#下面是更新的，追加了判断文件是否存在		
+
+path = "/home/www/dazuizhibo1/sys/fun/logs/201707/sql.txt"
+path2 = "/home/shell/web1/sys/fun/logs/201708/sql.txt"
+
+def getfilesize(path):
+    try:
+        size = os.path.getsize(path)
+        return size
+    except Exception as err:
+        print err
+
+def movefiles(filename):
+    if os.path.exists(filename):
+        aa = getfilesize(filename)
+        if aa >= 104857600:
+            bb = time.time()
+            cc = str(bb)
+            os.rename(filename, filename+cc)
+
+
+		
+movefiles(path)
+movefiles(path2)
 
 
 movefiles(path)
